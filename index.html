@@ -15,6 +15,7 @@
     <nav
       class="p-4 bg-red-500 bg-opacity-10 backdrop-blur-sm fixed w-full z-10">
       <div class="lg:max-w-[1300px] mx-auto flex justify-between items-center">
+        <!-- Logo -->
         <div class="flex items-center space-x-4">
           <a href="#" class="text-white text-xl font-bold relative">
             <img
@@ -22,7 +23,20 @@
               alt="Ray-Ban Logo"
               class="h-10 mx-10" />
           </a>
-          <ul class="flex space-x-4 text-[12px]">
+        </div>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hidden">
+          <button id="navToggle" class="text-white focus:outline-none text-3xl">
+            &#9776;
+          </button>
+        </div>
+
+        <!-- Full Menu (Hidden on Mobile) -->
+        <div
+          id="navMenu"
+          class="hidden lg:flex space-x-4 text-[12px] lg:mx-20 lg:items-center">
+          <ul class="flex space-x-4">
             <li>
               <a href="#" class="text-white uppercase font-semibold"
                 >Products</a
@@ -31,14 +45,37 @@
             <li>
               <a href="#" class="text-white uppercase font-semibold">About</a>
             </li>
+            <li>
+              <a href="#" class="text-white uppercase font-semibold">Luxe</a>
+            </li>
+            <li>
+              <a href="#" class="text-white uppercase font-semibold">Pricing</a>
+            </li>
           </ul>
         </div>
-        <ul class="flex space-x-4 text-[12px] mx-20">
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden backdrop-blur-xl bg-red-500 bg-opacity-90 fixed top-0 left-0 w-full h-[50vh] py-14 hidden flex-col items-center justify-center text-white space-y-6 z-20">
+        <button
+          id="closeMenu"
+          class="text-white text-3xl absolute top-5 right-5 focus:outline-none">
+          &times;
+        </button>
+        <ul class="text-center space-y-6 text-xl">
           <li>
-            <a href="#" class="text-white uppercase font-semibold">Luxe</a>
+            <a href="#" class="uppercase font-semibold">Products</a>
           </li>
           <li>
-            <a href="#" class="text-white uppercase font-semibold">Pricing</a>
+            <a href="#" class="uppercase font-semibold">About</a>
+          </li>
+          <li>
+            <a href="#" class="uppercase font-semibold">Luxe</a>
+          </li>
+          <li>
+            <a href="#" class="uppercase font-semibold">Pricing</a>
           </li>
         </ul>
       </div>
@@ -47,7 +84,9 @@
     <main class="w-full h-screen absolute inset-0">
       <div
         class="absolute top-1/4 left-16 z-20 flex flex-col items-start px-16 py-20">
-        <h1 class="text-7xl font-bold text-white mb-6">Ray-Ban</h1>
+        <h1 class="sm:text-7xl text-4xl font-semibold text-white mb-6">
+          Ray-Ban
+        </h1>
         <button
           class="bg-white text-black px-6 py-4 px-10 text-xl font-semibold hover:bg-opacity-90 transition duration-300">
           Explore Now
@@ -56,23 +95,23 @@
       <div id="image" class="w-full h-screen">
         <img
           class="object-cover w-full h-full"
-          src="/images/IMG_7564.JPG"
+          src="/images/IMG_7564.webp"
           alt="Ray-Ban Sunglasses 1" />
         <img
           class="object-cover w-full h-full"
-          src="/images/IMG_7565.JPG"
+          src="/images/IMG_7565.webp"
           alt="Ray-Ban Sunglasses 2" />
         <img
           class="object-cover w-full h-full"
-          src="/images/IMG_7566.JPG"
+          src="/images/IMG_7566.webp"
           alt="Ray-Ban Sunglasses 3" />
         <img
           class="object-cover w-full h-full"
-          src="/images/IMG_7567.JPG"
+          src="/images/IMG_7567.webp"
           alt="Ray-Ban Sunglasses 4" />
         <img
           class="object-cover w-full h-full"
-          src="/images/IMG_7568.JPG"
+          src="/images/IMG_7568.webp"
           alt="Ray-Ban Sunglasses 5" />
       </div>
     </main>
@@ -83,5 +122,20 @@
     <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
     <script src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
     <script src="script.js"></script>
+
+    <script>
+      // Toggle mobile menu visibility
+      const navToggle = document.getElementById("navToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const closeMenu = document.getElementById("closeMenu");
+
+      navToggle.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    </script>
   </body>
 </html>
