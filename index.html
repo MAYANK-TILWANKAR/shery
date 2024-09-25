@@ -25,61 +25,61 @@
           </a>
         </div>
 
-        <!-- Hamburger Icon (Mobile) -->
-        <div class="hidden">
-          <button id="navToggle" class="text-white focus:outline-none text-3xl">
-            &#9776;
+        <!-- Navigation Menu -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#" class="text-white hover:text-gray-300">Home</a>
+          <a href="#" class="text-white hover:text-gray-300">Products</a>
+          <a href="#" class="text-white hover:text-gray-300">About</a>
+          <a href="#" class="text-white hover:text-gray-300">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden">
+          <button id="navToggle" class="text-white">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
           </button>
         </div>
-
-        <!-- Full Menu (Hidden on Mobile) -->
-        <div
-          id="navMenu"
-          class="hidden lg:flex space-x-4 text-[12px] lg:mx-20 lg:items-center">
-          <ul class="flex space-x-4">
-            <li>
-              <a href="#" class="text-white uppercase font-semibold"
-                >Products</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-white uppercase font-semibold">About</a>
-            </li>
-            <li>
-              <a href="#" class="text-white uppercase font-semibold">Luxe</a>
-            </li>
-            <li>
-              <a href="#" class="text-white uppercase font-semibold">Pricing</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Mobile Dropdown Menu -->
-      <div
-        id="mobileMenu"
-        class="lg:hidden backdrop-blur-xl bg-red-500 bg-opacity-90 fixed top-0 left-0 w-full h-[50vh] py-14 hidden flex-col items-center justify-center text-white space-y-6 z-20">
-        <button
-          id="closeMenu"
-          class="text-white text-3xl absolute top-5 right-5 focus:outline-none">
-          &times;
-        </button>
-        <ul class="text-center space-y-6 text-xl">
-          <li>
-            <a href="#" class="uppercase font-semibold">Products</a>
-          </li>
-          <li>
-            <a href="#" class="uppercase font-semibold">About</a>
-          </li>
-          <li>
-            <a href="#" class="uppercase font-semibold">Luxe</a>
-          </li>
-          <li>
-            <a href="#" class="uppercase font-semibold">Pricing</a>
-          </li>
-        </ul>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden">
+      <div class="flex justify-end p-4">
+        <button id="closeMenu" class="text-white">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col items-center space-y-6 mt-20">
+        <a href="#" class="text-white text-2xl hover:text-gray-300">Home</a>
+        <a href="#" class="text-white text-2xl hover:text-gray-300">Products</a>
+        <a href="#" class="text-white text-2xl hover:text-gray-300">About</a>
+        <a href="#" class="text-white text-2xl hover:text-gray-300">Contact</a>
+      </div>
+    </div>
 
     <main class="w-full h-screen absolute inset-0">
       <div
@@ -87,10 +87,10 @@
         <h1 class="sm:text-7xl text-4xl font-semibold text-white mb-6">
           Ray-Ban
         </h1>
-        <button
-          class="bg-white text-black px-6 py-4 px-10 text-xl font-semibold hover:bg-opacity-90 transition duration-300">
+        <div
+          class="bg-white text-black px-6 py-4 px-10 text-xl font-semibold cursor-default select-none">
           Explore Now
-        </button>
+        </div>
       </div>
       <div id="image" class="w-full h-screen">
         <img
